@@ -1,0 +1,51 @@
+acumulador = 0
+acumuladorTexto = ''
+print('Seja bem-vindo à lanchonete do Pedro Henrique Linares Gil RU 3761050')
+print('*****************Cardápio******************')
+print("| Código |       Descrição       |  Valor |")
+print("|   100  |    Cachorro-Quente    |   9,00 |")
+print("|   101  | Cachorro-Quente duplo |  11,00 |")
+print("|   102  |         X=Egg         |  12,00 |")
+print("|   103  |        X-Salada       |  13,00 |")
+print("|   104  |        X-Bacon        |  14,00 |")
+print("|   105  |         X-Tudo        |  17,00 |")
+print("|   200  |   Refrigerante Lata   |   5,00 |")
+print("|   201  |       Chá Gelado      |   4,00 |")
+while True:
+
+     codigo = input('Entre com o código desejado: ')
+     if codigo == '100': # poderia ser 100 como int também
+         acumulador += 9.00 # acumulador guarda o valor final dos produtos
+         acumuladorTexto += '\n Cachorro-Quente: R$ 9,00'
+     elif codigo == '101':
+         acumulador += 11.00
+         acumuladorTexto += '\n Cachorro-Quente duplo: R$ 11,00'
+     elif codigo == '102':
+         acumulador += 12.00
+         acumuladorTexto += '\n X=Egg: R$ 12,00'
+     elif codigo == '103':
+         acumulador += 13.00
+         acumuladorTexto += '\n X-Salada: R$ 13,00'
+     elif codigo == '104':
+         acumulador += 14.00
+         acumuladorTexto += '\n X-Bacon: R$ 14,00'
+     elif codigo == '105':
+         acumulador += 17.00
+         acumuladorTexto += '\n X-Tudo: R$ 17,00'
+     elif codigo == '200':
+         acumulador += 5.00
+         acumuladorTexto += '\n Refrigerante Lata: R$ 5,00'
+     elif codigo == '201':
+         acumulador += 4.00
+         acumuladorTexto += '\n Chá Gelado: R$ 4,00'
+     else:
+         print('Opção inválida')
+         continue
+     print('Os pedidos até o momento são: {} \n total {:.2f}'.format(acumuladorTexto, acumulador))
+     resposta = input('Deseja mais alguma coisa? (sim/não)')
+     if resposta == 'sim':
+         continue
+     else:
+         print('Os itens comprados são: '+ acumuladorTexto)
+         print('O valor final da conta é: {:.2f}'.format(acumulador))
+         break
