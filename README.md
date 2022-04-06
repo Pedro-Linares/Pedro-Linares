@@ -1,5 +1,5 @@
 - 👋 Hi, I’m @Pedro-Linares
-- 👀 I’m interested in computer engineering 
+- 👀 I’m coursing computer engineering 
 - 🌱 I’m currently learning python
 - 💞️ I’m looking to collaborate on programming 
 - 📫 How to reach me pedrolinares.adv@gmail.com
