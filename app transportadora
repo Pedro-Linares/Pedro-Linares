@@ -1,0 +1,80 @@
+def dimensoesObjeto():
+    while True:
+        try:
+            altura = float(input('Digite a alturada caixa em cm: '))
+            comprimento = float(input('Digite o comprimento da caixa em cm: '))
+            largura = float(input('Digite a largura da caixa em cm: '))
+            volume = altura * comprimento * largura
+            return abs(volume)  # corrige qualquer número negativo deixando-o positivo
+
+        except:
+            print('Digite um número válido')
+            continue
+            try:
+                if volume < 1000:
+                    return 10.00
+                elif 1000 <= volume < 10000:
+                    return 20.00
+                elif 10000 <= volume < 30000:
+                    return 30.00
+                elif 30000 <= volume < 100000:
+                    return 50.00
+
+                else:
+                    print('Volumes maiores que 100000 não são aceitos')
+                continue
+            except ValueError:
+                print('Digite valores válidos. Tente novamente')
+
+
+def pesoObjeto():
+    while True:
+        try:
+            peso = float(input('Digite o peso do pacote em kg: '))
+            if 0 <= peso < 0.10: # desta forma valores negativos não serão aceitos
+                return 1
+            elif 0.1 <= peso < 1:
+                return 1.5
+            elif 1 <= peso < 10:
+                return 2.0
+            elif 10 <= peso < 30:
+                return 3.0
+
+            else:
+                print('Não aceitamos pacotes esta quantidade no pacote')
+                continue
+        except ValueError:
+            print('Digite valores numéricos. Tente novamente')
+            continue
+
+
+def rotaObjeto():
+    while True:
+        trajetos = input('Escolha o trajeto desejado:\n RS - DE Rio de janeiro ATÉ São Paulo \n SR - DE São Paulo ATÉ Rio de Janeiro\n BS - DE Brasilia ATÉ São Paulo \n SB - DE São Paulo ATÉ Brasilia \n BR - DE Brasilia ATÉ Rio de Janeiro \n RB - DE Rio de Janeiro Até Brasilia \n>> ')
+        if trajetos == 'RS':
+            return 1.00
+        elif trajetos == 'SR':
+            return 1.00
+        elif trajetos == 'BS':
+            return 1.20
+        elif trajetos == 'SB':
+            return 1.20
+        elif trajetos == 'BR':
+            return 1.50
+        elif trajetos == 'RB':
+            return 1.50
+        else:
+            print('Serviço indisponível')
+        continue
+
+
+#            Programa Principal
+
+print('Bem-vindo á entregadora do Pedro Henrique Linares Gil RU 3761050')
+
+dimensoes = dimensoesObjeto()
+peso = pesoObjeto()
+rota = rotaObjeto()
+
+total = dimensoes * peso * rota
+print('O valor total foi de: R$ {:.2f}'.format(total)) # poderia simplificar fazendo a multiplicação do total direto no print, mas com as variáveis fica mais fácil de visualizar
